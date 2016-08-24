@@ -18,14 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="miniVolume.png" maximumValueImage="maxVolume.png" translatesAutoresizingMaskIntoConstraints="NO" id="ykt-hR-953">
-                                <rect key="frame" x="24" y="269" width="272" height="31"/>
-                                <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="maximumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="slide:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Hf-QN-Rea"/>
-                                </connections>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSW-hV-QjB">
                                 <rect key="frame" x="145" y="236" width="30" height="25"/>
                                 <constraints>
@@ -39,11 +31,55 @@
                                     <action selector="btnPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nLK-NE-vU9"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="miniVolume.png" maximumValueImage="maxVolume.png" translatesAutoresizingMaskIntoConstraints="NO" id="ykt-hR-953">
+                                <rect key="frame" x="24" y="269" width="272" height="31"/>
+                                <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="slide:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Hf-QN-Rea"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="huF-GG-SeA">
+                                <rect key="frame" x="60" y="198" width="194" height="31"/>
+                                <connections>
+                                    <action selector="slider_Duration:" destination="BYZ-38-t0r" eventType="valueChanged" id="dQ2-BK-J6w"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2h-Tc-9Dl">
+                                <rect key="frame" x="16" y="202" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cer-aB-n79"/>
+                                    <constraint firstAttribute="width" constant="42" id="lnz-aO-Hh1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdL-rA-Nz0">
+                                <rect key="frame" x="258" y="202" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="ZnF-qR-Cl9"/>
+                                    <constraint firstAttribute="height" constant="21" id="xVN-O1-u0f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JVn-bN-LgC">
+                                <rect key="frame" x="245" y="233" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="huF-GG-SeA" firstAttribute="leading" secondItem="L2h-Tc-9Dl" secondAttribute="trailing" constant="4" id="1ML-J2-vI4"/>
                             <constraint firstItem="ykt-hR-953" firstAttribute="top" secondItem="pSW-hV-QjB" secondAttribute="bottom" constant="8" id="2jp-yp-z7A"/>
+                            <constraint firstItem="ykt-hR-953" firstAttribute="top" secondItem="OdL-rA-Nz0" secondAttribute="bottom" constant="46" id="4Iq-uc-YKR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OdL-rA-Nz0" secondAttribute="trailing" constant="6" id="4RQ-Wa-N0Q"/>
+                            <constraint firstItem="L2h-Tc-9Dl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9D9-JD-MB4"/>
+                            <constraint firstItem="ykt-hR-953" firstAttribute="top" secondItem="L2h-Tc-9Dl" secondAttribute="bottom" constant="46" id="Dhe-q7-VcX"/>
                             <constraint firstItem="ykt-hR-953" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rdw-CP-YjU"/>
+                            <constraint firstItem="OdL-rA-Nz0" firstAttribute="leading" secondItem="huF-GG-SeA" secondAttribute="trailing" constant="4" id="WSh-L6-pGE"/>
+                            <constraint firstItem="pSW-hV-QjB" firstAttribute="top" secondItem="huF-GG-SeA" secondAttribute="bottom" constant="8" id="hOB-MP-NP7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ykt-hR-953" secondAttribute="trailing" constant="10" id="kHZ-b3-BIJ"/>
                             <constraint firstItem="pSW-hV-QjB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oBL-tN-Leg"/>
                             <constraint firstItem="pSW-hV-QjB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w8m-ZN-h0E"/>
@@ -55,7 +91,11 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btnPlay" destination="pSW-hV-QjB" id="NbX-n4-ECc"/>
+                        <outlet property="duration" destination="L2h-Tc-9Dl" id="vLe-8b-Ohs"/>
+                        <outlet property="maxDuration" destination="OdL-rA-Nz0" id="efV-91-LmA"/>
+                        <outlet property="my_Switch" destination="JVn-bN-LgC" id="cC6-Co-0Vs"/>
                         <outlet property="slide" destination="ykt-hR-953" id="Bue-O2-j6k"/>
+                        <outlet property="slider_Duration" destination="huF-GG-SeA" id="ZYd-CH-isG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
